@@ -40,3 +40,104 @@
 .read-the-docs {
   color: #888;
 }
+
+.homeContainer {
+  color: $white;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  height: 100vh;
+}
+
+.aside {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 14;
+  text-align: left;
+
+  .asideInner {
+    width: 80%;
+    margin: auto;
+  }
+
+  .nameWithLogo {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      margin: auto;
+    }
+
+    img {
+      height: 64px;
+      width: 64px;
+      // margin: auto;
+    }
+  }
+}
+
+.body {
+  grid-column-start: 4;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 14;
+  text-align: left;
+
+  .bodyInner {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.colorBlockWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5% 10%;
+}
+
+.colorBlockGreen,
+.colorBlockBrown,
+.colorBlockOrange,
+.colorBlockGray {
+  height: .75em;
+  width: .75em;
+}
+
+.colorBlockGreen {
+  background: $green;
+}
+
+.colorBlockBrown {
+  background: $brown;
+}
+
+.colorBlockOrange {
+  background: $orange;
+}
+
+.colorBlockGray {
+  background: $gray;
+}
+
+@media only screen and (max-width: 768px) {
+  .homeContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .aside,
+  .body {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .colorBlockGreen,
+  .colorBlockBrown,
+  .colorBlockOrange,
+  .colorBlockGray {
+    height: .5em;
+    width: .5em;
+  }
+}
