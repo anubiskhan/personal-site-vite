@@ -1,3 +1,11 @@
+# To-do
+  - configure github actions to deploy to s3 and invalidate distro when pull is merged into master
+  - fix styling for mobile
+  - set favicon to use mine instead of vite default
+  - setup router with nav bar
+  - 2nd page with youtube randomizer
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
