@@ -1,9 +1,13 @@
 import fav from '/fav2.png'
 import './App.css'
-import { Link } from "react-router-dom";
-import jamsList from './jamsList'
 import { useState } from 'react';
-import myJson from './json/jams.json';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
+import jamsList from './jamsList'
 
 
 export default function App() {
@@ -14,7 +18,7 @@ export default function App() {
           <div className="asideInner">
             <div className="nameWithLogo">
               <h1>Kelly Schroeder</h1>
-              <img src={fav} alt="" />
+              <a><img src={fav} alt="" /></a> 
             </div>
             <p>
               Hello, I'm a software developer living in the Pacific Northwest.
@@ -58,7 +62,7 @@ export default function App() {
               I'm <i>begrudingly</i> capable with Wordpress, CraftCMS, CSS, and HTML.
             </p>
             <p>
-              <a href="https://github.com/anubiskhan/personal_site" target="_blank" rel="noopener">This site</a> is built using Vue.js. Hosted in a secure S3 and distributed via Cloudfront.
+              <a href="https://github.com/anubiskhan/personal_site_vite" target="_blank" rel="noopener">This site</a> is built using React.js. Hosted in a secure S3 and distributed via Cloudfront.
 
             </p>
           </div>

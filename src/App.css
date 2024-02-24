@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .homeContainer {
-  color: $white;
+  color: #eff1f3ff;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(16, 1fr);
@@ -77,18 +77,7 @@
   }
 }
 
-.body {
-  grid-column-start: 4;
-  grid-column-end: 7;
-  grid-row-start: 2;
-  grid-row-end: 14;
-  text-align: left;
 
-  .bodyInner {
-    width: 80%;
-    margin: auto;
-  }
-}
 
 .colorBlockWrapper {
   display: flex;
@@ -106,19 +95,19 @@
 }
 
 .colorBlockGreen {
-  background: $green;
+  background: #5dfdcbff;
 }
 
 .colorBlockBrown {
-  background: $brown;
+  background: #C9B79C;
 }
 
 .colorBlockOrange {
-  background: $orange;
+  background: #FE4A49;
 }
 
 .colorBlockGray {
-  background: $gray;
+  background: #696773ff;
 }
 
 @media only screen and (max-width: 768px) {
