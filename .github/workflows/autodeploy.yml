@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master  # replace with your default branch if not 'main'
+      - master
 
 jobs:
   build_and_deploy:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 14  # use the Node.js version your project requires
+        node-version: 20  # use the Node.js version your project requires
 
     - name: Install dependencies
       run: npm ci
