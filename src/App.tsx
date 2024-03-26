@@ -23,7 +23,7 @@ export default function App() {
         </div>
         <div className="sideInnerBody">
           <p>
-            Hello, I'm a software developer living in the Pacific Northwest.
+            Hello, I am a software developer living in the Pacific Northwest.
             I like to make new things, fix broken things, and optimize existing things.
             Big fan of automation, integrations, scalability, modular design, and maintainability.
           </p>
