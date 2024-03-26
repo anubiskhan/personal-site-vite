@@ -19,7 +19,7 @@ jobs:
         node-version: 20  # use the Node.js version your project requires
 
     - name: Install dependencies
-      run: yarn
+      run: yarn install --frozen-lockfile
 
     - name: Build
       run: yarn run build
