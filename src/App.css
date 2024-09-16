@@ -6,11 +6,33 @@
   width: 80vw; */
 }
 
+.topNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.topNav img {
+  height: 50px;
+  width: 50px;
+}
+
+.topNav h1 {
+  margin: 0;
+}
+
+.iconGridItem {
+  text-decoration: none;
+  color: inherit;
+  margin-left: 10px;
+}
 
 .homeContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   color: #eff1f3ff;
+  padding: 0 20%;
 }
 
 .sideContainer {
