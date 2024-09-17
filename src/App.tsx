@@ -9,21 +9,22 @@ import Home from "./components/Home"; // Make sure to create this component
 export default function App() {
   return (
     <Router>
-      <div className="topNav">
-        <div>
-        <Link to="/"><img src={fav} alt="" /></Link>        
-        <h1>Kelly Schroeder</h1>
+      <section>
+        <div className="topNav">
+          <div>
+            <Link to="/"><img src={fav} alt="" /></Link>
+          </div>
+          <div>
+            <Link className="iconGridItem" to="/me">Me</Link>
+            <Link className="iconGridItem" to="/things">Things</Link>
+          </div>
         </div>
-      <div>
-          <Link className="iconGridItem" to="/me">Me</Link>
-          <Link className="iconGridItem" to="/things">Things</Link>
-      </div>
-      </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/me" element={<Me />} />
-          <Route path="/things" element={<Things />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/me" element={<Me />} />
+            <Route path="/things" element={<Things />} />
+          </Routes>
+      </section>
     </Router>
   );
 }
