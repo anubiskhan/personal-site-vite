@@ -1,62 +1,32 @@
 // File: ./components/Things.tsx
+import '../styles/Me.css'
 
 const Me = () => {
     return (
-        <div className="homeContainer">
-        <div className="sideContainer">
-            <div className="sideInnerTop">
+            <div>
                 
-                
-            </div>
-            <div className="sideInnerBody">
                 <p>
-                    Hello, I am a software developer living in the Pacific Northwest.
-                    I like to make new things, fix broken things, and optimize existing things.
-                    Big fan of automation, integrations, scalability, modular design, and maintainability.
+                    Hi, I’m a software developer based in the Pacific Northwest with a passion for building, fixing, and optimizing systems. I thrive on creating efficient solutions and am particularly drawn to automation, seamless integrations, scalability, and crafting modular, maintainable designs.
                 </p>
-                <div className="iconGrid">
-                    <a className="iconGridItem" href="mailto:kelly@kellyrs.com" target="_blank" rel="noopener noreferrer">Email</a>
-                    <a className="iconGridItem" href="https://www.linkedin.com/in/kelly-schroeder/" target="_blank" rel="noopener noreferrer">Linkedin</a>
-                    <a className="iconGridItem" href="https://github.com/anubiskhan" target="_blank" rel="noopener noreferrer">Github</a>
-                </div>
-                <div className="sideContainer">
-                    <div className="iconGrid">
-                        <div className="iconGridItem">
-                            <div className="colorBlockGreen">
-                            </div>
-                        </div>
-                        <div className="iconGridItem">
-                            <div className="colorBlockOrange">
-                            </div>
-                        </div>
-                        <div className="iconGridItem">
-                            <div className="colorBlockGray">
-                            </div>
-                        </div>
-                        <div className="iconGridItem">
-                            <div className="colorBlockBrown">
-                            </div>
-                        </div>
-                    </div>
-                    <div className="sideInnerBody">
+                <div>
+                    <div>
                         <p>
-                            For the last six I have been working extensively with Ruby on Rails, PostgreSQL, and AWS.
+                        Over the past six years, I’ve been deeply immersed in Ruby on Rails, PostgreSQL, and AWS, developing robust, scalable applications.
                         </p>
                         <p>
-                            I'm capable with Vue.js, Python, DevOps, CloudOps, project management, finance, economics, guitar, and carpentry.
+                        I also bring a strong working knowledge of Vue.js, Python, DevOps, CloudOps, and project management, alongside experience in finance, economics, guitar, and carpentry.
                         </p>
                         <p>
-                            I'm <i>begrudingly</i> capable with Wordpress, CraftCMS, CSS, and HTML.
+                        While I can work with Wordpress, CraftCMS, CSS, and HTML, these tools are not my favorites, though I handle them proficiently when needed.
                         </p>
                         <p>
                             <a href="https://github.com/anubiskhan/personal_site_vite" target="_blank" rel="noopener">This site</a> is built using React.js. Hosted in a secure S3 and distributed via Cloudfront.
                         </p>
                     </div>
                 </div>  
-            </div>
-        </div>
     </div>
     );
 }
 
 export default Me;
+

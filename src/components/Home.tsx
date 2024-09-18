@@ -1,5 +1,6 @@
 
 // File: ./components/Home.tsx
+import '../styles/Home.css'
 
 const Home = () => {
     return (

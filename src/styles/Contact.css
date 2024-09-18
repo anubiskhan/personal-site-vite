@@ -1,0 +1,14 @@
+.contactGrid {
+    display: flex;
+    width: 100%;
+    margin: 0em auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 1fr;
+    justify-content: center;
+}
+
+.contactGridItem {
+    margin: auto;
+}
+

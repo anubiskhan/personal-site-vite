@@ -1,30 +1,23 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import fav from '/fav2.png'
-import Things from "./components/Things"; // Make sure to create this component
-import Me from "./components/Me"; // Make sure to create this component
-import Home from "./components/Home"; // Make sure to create this component
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Nav from "./components/Nav";
+import Contact from "./components/Contact";
+import Things from "./components/Things"; 
+import Me from "./components/Me"; 
+import Home from "./components/Home"; 
+import './styles/App.css'
 
 
 export default function App() {
   return (
     <Router>
-      <section>
-        <div className="topNav">
-          <div>
-            <Link to="/"><img src={fav} alt="" /></Link>
-          </div>
-          <div>
-            <Link className="iconGridItem" to="/me">Me</Link>
-            <Link className="iconGridItem" to="/things">Things</Link>
-          </div>
-        </div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/me" element={<Me />} />
-            <Route path="/things" element={<Things />} />
-          </Routes>
-      </section>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/me" element={<Me />} />
+        <Route path="/things" element={<Things />} />
+      </Routes>
+      <Contact />
     </Router>
   );
 }
