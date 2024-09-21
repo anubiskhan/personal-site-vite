@@ -1,13 +1,30 @@
-#root {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-  justify-content: center;
-  /* height: 100vh;
-  width: 80vw; */
+.copyLink {
+  color: var(--blue-color);
+  text-decoration: none;
 }
 
+.prettyLink {
+  color: var(--blue-color);
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
 
+  &:hover {
+    color: var(--purple-color);
+    border-color: var(--indigo-color);
+  }
+}
+
+.prettyLink:focus,
+.prettyLink:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 
 .iconGridItem {
   text-decoration: none;

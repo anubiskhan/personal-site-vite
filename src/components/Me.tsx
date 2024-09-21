@@ -20,7 +20,7 @@ const Me = () => {
                         While I can work with Wordpress, CraftCMS, CSS, and HTML, these tools are not my favorites, though I handle them proficiently when needed.
                         </p>
                         <p>
-                            <a href="https://github.com/anubiskhan/personal_site_vite" target="_blank" rel="noopener">This site</a> is built using React.js. Hosted in a secure S3 and distributed via Cloudfront.
+                        <a href="https://github.com/anubiskhan/personal_site_vite" target="_blank" rel="noopener" className='copyLink'>This site</a> is built using React.js. Hosted in a secure S3 and distributed via Cloudfront.
                         </p>
                     </div>
                 </div>  

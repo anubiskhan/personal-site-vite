@@ -1,7 +1,7 @@
 .homeContainer {
     display: grid;
     grid-template-columns: 1fr;
-    color: #eff1f3ff;
+    color: var(--white-color);
 }
 
 .sideContainer {

@@ -1,8 +1,12 @@
 :root {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  justify-content: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    text-align: left;
   line-height: 1.5;
   font-weight: 450;
 
@@ -15,6 +19,9 @@
   --orange-color: #FE4A49;
   --gray-color: #696773ff;
   --purple-color: rgb(105, 5, 198); 
+  --indigo-color: #646cff;
+  --white-color: #eff1f3ff;
+  --blue-color: #009fb7ff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
