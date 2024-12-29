@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // import '../styles/Things.css';
 
 const Things = () => {
-    const [keySequence, setKeySequence] = useState<number[]>([]);
+    const [, setKeySequence] = useState<number[]>([]);
     const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // Key codes for ↑ ↑ ↓ ↓ ← → ← → B A
 
     useEffect(() => {
