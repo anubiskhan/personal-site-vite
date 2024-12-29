@@ -1,0 +1,82 @@
+.homeContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: var(--white-color);
+}
+
+.sideContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    margin: 0em 1em;
+}
+
+.sideInnerTop {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    display: grid;
+    margin: 1em 0em;
+
+    h1 {
+        margin: 1em 0;
+    }
+
+    img {
+        grid-column-start: 2;
+        margin: 1em auto;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.sideInnerBody {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+
+    p {
+        margin: 1em auto;
+    }
+}
+
+.iconGrid {
+    display: flex;
+    width: 100%;
+    margin: 0em auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 1fr;
+    justify-content: center;
+}
+
+.iconGridItem {
+    margin: auto;
+}
+
+.colorBlockGreen,
+.colorBlockBrown,
+.colorBlockOrange,
+.colorBlockGray {
+    height: .75em;
+    width: .75em;
+}
+
+.colorBlockGreen {
+    background: #5dfdcbff;
+}
+
+.colorBlockBrown {
+    background: #C9B79C;
+}
+
+.colorBlockOrange {
+    background: #FE4A49;
+}
+
+.colorBlockGray {
+    background: #696773ff;
+}

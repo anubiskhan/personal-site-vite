@@ -1,0 +1,35 @@
+:root {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  justify-content: center;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+  line-height: 1.5;
+  font-weight: 450;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #272727ff;
+
+  --green-color: #5dfdcbff;
+  --brown-color: #C9B79C;
+  --orange-color: #FE4A49;
+  --gray-color: #696773ff;
+  --purple-color: rgb(105, 5, 198); 
+  --indigo-color: #646cff;
+  --white-color: #eff1f3ff;
+  --blue-color: #009fb7ff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}

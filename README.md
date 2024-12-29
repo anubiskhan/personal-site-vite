@@ -1,25 +1,27 @@
-# To-do
-  - configure github actions to deploy to s3 and invalidate distro when pull is merged into master
-  - fix styling for mobile
-  - set favicon to use mine instead of vite default
-  - setup router with nav bar
-  - 2nd page with youtube randomizer
+# Project Title
 
+This project is a React application built with TypeScript and Vite. It provides a minimal setup with Hot Module Replacement (HMR) and some ESLint rules.
 
-# React + TypeScript + Vite
+## Project Status
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [x] Configure GitHub Actions to deploy to S3 and invalidate distribution when pull request is merged into master
+- [x] Fix styling for mobile
+- [x] Set favicon to use custom icon instead of Vite default
+- [x] Setup router with navigation bar
+- [ ] Create a second page with YouTube randomizer
 
-Currently, two official plugins are available:
+## Getting Started with React + TypeScript + Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This template uses two official plugins:
 
-## Expanding the ESLint configuration
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md): This plugin uses [Babel](https://babeljs.io/) for Fast Refresh.
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): This plugin uses [SWC](https://swc.rs/) for Fast Refresh.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Expanding the ESLint Configuration
 
-- Configure the top-level `parserOptions` property like this:
+For production applications, consider updating the configuration to enable type-aware lint rules:
+
+1. Configure the top-level `parserOptions` property:
 
 ```js
 export default {
