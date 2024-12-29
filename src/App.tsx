@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Nav from "./components/Nav";
 import Contact from "./components/Contact";
-import Things from "./components/Things"; 
-import Me from "./components/Me"; 
+// import Things from "./components/Things"; 
 import Home from "./components/Home"; 
+import Clicky from "./components/Clicky"; 
 import './styles/App.css'
 
 
@@ -14,8 +14,8 @@ export default function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/me" element={<Me />} />
-        <Route path="/things" element={<Things />} />
+        <Route path="/clicky" element={<Clicky />} />
+        {/* <Route path="/things" element={<Things />} /> */}
       </Routes>
       <Contact />
     </Router>

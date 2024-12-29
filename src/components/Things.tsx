@@ -1,15 +1,42 @@
 // File: ./components/Things.tsx
-// import '../styles/Things.css'
+import { useState, useEffect } from 'react';
+// import '../styles/Things.css';
 
 const Things = () => {
+    const [keySequence, setKeySequence] = useState<number[]>([]);
+    const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // Key codes for ↑ ↑ ↓ ↓ ← → ← → B A
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            setKeySequence(prevSequence => {
+                const newSequence = [...prevSequence, event.keyCode].slice(-konamiCode.length);
+                if (newSequence.join('') === konamiCode.join('')) {
+                    triggerKonamiAction();
+                }
+                return newSequence;
+            });
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
+    const triggerKonamiAction = () => {
+        alert('Konami Code Activated!');
+        // You can replace this alert with any action you want to trigger
+    };
+
     return (
         <div>
             <h1>
                 Tested 100day 200day report
-            </h1>            
+            </h1>
             <h1>
                 Demark report
-            </h1>            
+            </h1>
             <ul>
                 <li>
                     SP500
@@ -41,9 +68,6 @@ const Things = () => {
                 </li>
                 <li>
                     Terraformed
-                </li>
-                <li>
-                    rails/vite
                 </li>
             </ul>
         </div>

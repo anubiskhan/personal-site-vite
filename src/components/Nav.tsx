@@ -11,8 +11,8 @@ const Nav = () => {
                 <NavLink to="/"><img src={fav} alt="" /></NavLink>
             </div>
             <div>
-                <NavLink to="/me" className="prettyLink">Me</NavLink>
-                <NavLink to="/things" className="prettyLink">Things</NavLink>
+                <NavLink to="/clicky" className="prettyLink">Clicky</NavLink>
+                {/* <NavLink to="/things" className="prettyLink">Things</NavLink> */}
             </div>
         </div>
     );
