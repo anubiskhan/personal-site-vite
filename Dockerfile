@@ -1,20 +1,33 @@
-# Use an official Node.js runtime as a parent image
-FROM node:14
+# Build stage
+FROM node:20-alpine as build
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Clear npm cache and install dependencies
+RUN npm cache clean --force && \
+    rm -rf node_modules && \
+    npm install
 
-# Copy the rest of your application code
+# Copy source code
 COPY . .
 
-# Expose the port your app runs on
-EXPOSE 3000
+# Rebuild esbuild binary
+RUN node node_modules/esbuild/install.js
 
-# Command to run your app
-CMD ["npm", "run", "dev"]
+# Build the application
+RUN npm run build
+
+# Production stage
+FROM nginx:alpine
+
+# Copy built assets from build stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
