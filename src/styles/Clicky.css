@@ -15,6 +15,7 @@
     background: #eff1f3ff;
     /* White background for the frame */
     overflow: hidden;
+    cursor: crosshair; /* Better visual feedback */
 }
 
 .mountain {
@@ -41,13 +42,26 @@
 
 .bubble {
     position: absolute;
-    background-color: #FE4A49;
     width: 40px;
-    /* Diameter of the bubble */
     height: 40px;
-    /* Diameter of the bubble */
     border-radius: 50%;
-    cursor: pointer;
-    transition: none;
-    /* Ensure no transition on hover */
+    transform: translate(-50%, -50%); /* Center the bubble on its coordinates */
+    pointer-events: none; /* This prevents bubbles from interfering with mouse events */
+}
+
+.counters {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 300px;
+}
+
+.counter {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
 }
