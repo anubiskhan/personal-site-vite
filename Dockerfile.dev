@@ -6,8 +6,12 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+# Add environment variable handling
+COPY .env.example .env
+
 # Don't copy source code - we'll mount it as a volume
 
 EXPOSE 5173
 
-CMD ["npm", "run", "dev", "--", "--host"] 
+# Use shell form to ensure environment variables are expanded
+CMD npm run dev -- --host 

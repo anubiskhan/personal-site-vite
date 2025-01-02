@@ -10,6 +10,7 @@ const Clicky = () => {
     const colorArray = Object.values(MyColors);
     const [bubbles, setBubbles] = useState<{ id: number, x: number, y: number, color: string }[]>([]);
     const [nextId, setNextId] = useState(1);
+    const [gameComplete, setGameComplete] = useState(false);
     const [colorCounts, setColorCounts] = useState<ColorCounter>({
         [MyColors.BLACK]: 0,
         [MyColors.BLUE]: 0,
@@ -20,23 +21,32 @@ const Clicky = () => {
         [MyColors.WHITE]: 0,
     });
 
+    // Check if all colors have reached 10
     useEffect(() => {
-        const interval = setInterval(() => {
-            // Filter available colors (those with count < 10)
-            const availableColors = colorArray.filter(color => colorCounts[color] < 10);
-            
-            if (availableColors.length > 0) {
-                const randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
-                setBubbles(prevBubbles => [
-                    ...prevBubbles,
-                    { id: nextId, x: Math.random() * 90, y: Math.random() * 90, color: randomColor as string }
-                ]);
-                setNextId(prevId => prevId + 1);
-            }
-        }, 1000);
+        const allComplete = Object.values(colorCounts).every(count => count >= 10);
+        if (allComplete) {
+            setGameComplete(true);
+        }
+    }, [colorCounts]);
 
-        return () => clearInterval(interval);
-    }, [nextId, colorCounts]);
+    useEffect(() => {
+        if (!gameComplete) {
+            const interval = setInterval(() => {
+                const availableColors = colorArray.filter(color => colorCounts[color] < 10);
+                
+                if (availableColors.length > 0) {
+                    const randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+                    setBubbles(prevBubbles => [
+                        ...prevBubbles,
+                        { id: nextId, x: Math.random() * 90, y: Math.random() * 90, color: randomColor as string }
+                    ]);
+                    setNextId(prevId => prevId + 1);
+                }
+            }, 1000);
+
+            return () => clearInterval(interval);
+        }
+    }, [nextId, colorCounts, gameComplete]);
 
     const handleMouseMove = (event: React.MouseEvent) => {
         const rect = event.currentTarget.getBoundingClientRect();
@@ -51,12 +61,10 @@ const Clicky = () => {
                 return distance <= 6;
             });
 
-            // Increment counters for popped bubbles, but don't exceed 10
             if (poppedBubbles.length > 0) {
                 setColorCounts(prevCounts => {
                     const newCounts = { ...prevCounts };
                     poppedBubbles.forEach(bubble => {
-                        // Only increment if current count is less than 10
                         if (newCounts[bubble.color] < 10) {
                             newCounts[bubble.color] = Math.min(10, (newCounts[bubble.color] || 0) + 1);
                         }
@@ -65,7 +73,6 @@ const Clicky = () => {
                 });
             }
 
-            // Return remaining bubbles
             return prevBubbles.filter(bubble => {
                 const dx = mouseX - bubble.x;
                 const dy = mouseY - bubble.y;
@@ -75,7 +82,6 @@ const Clicky = () => {
         });
     };
 
-    // Display counters
     const renderCounters = () => (
         <div className="counters">
             {Object.entries(colorCounts).map(([color, count]) => (
@@ -92,6 +98,16 @@ const Clicky = () => {
             ))}
         </div>
     );
+
+    if (gameComplete) {
+        return (
+            <div className="main">
+                <div className="frame">
+                    <h2>Congratulations! Next game coming soon...</h2>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className='main'>

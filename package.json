@@ -1,5 +1,5 @@
 {
-  "name": "personal_site_vite",
+  "name": "personal-site-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,10 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "aws --profile vue-deployer --region us-west-2 s3 sync ./dist s3://www.kellyrs.com --delete",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id EEAAMKCEAL8HU --paths '/*'"
+    "predeploy": "npm run build",
+    "deploy:full": "npm run deploy && npm run invalidate",
+    "deploy": "aws --profile $VITE_AWS_PROFILE --region $VITE_AWS_REGION s3 sync ./dist s3://$VITE_S3_BUCKET --delete",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id $VITE_CLOUDFRONT_DISTRIBUTION_ID --paths '/*'"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
