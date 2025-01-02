@@ -51,12 +51,15 @@ const Clicky = () => {
                 return distance <= 6;
             });
 
-            // Increment counters for popped bubbles
+            // Increment counters for popped bubbles, but don't exceed 10
             if (poppedBubbles.length > 0) {
                 setColorCounts(prevCounts => {
                     const newCounts = { ...prevCounts };
                     poppedBubbles.forEach(bubble => {
-                        newCounts[bubble.color] = (newCounts[bubble.color] || 0) + 1;
+                        // Only increment if current count is less than 10
+                        if (newCounts[bubble.color] < 10) {
+                            newCounts[bubble.color] = Math.min(10, (newCounts[bubble.color] || 0) + 1);
+                        }
                     });
                     return newCounts;
                 });
