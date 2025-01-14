@@ -1,40 +1,75 @@
-# Project Title
+# Personal Website
 
-This project is a React application built with TypeScript and Vite. It provides a minimal setup with Hot Module Replacement (HMR) and some ESLint rules.
+A modern, responsive personal website built with React and TypeScript, deployed on AWS CloudFront.
 
-## Project Status
+## Tech Stack
 
-- [x] Configure GitHub Actions to deploy to S3 and invalidate distribution when pull request is merged into master
-- [x] Fix styling for mobile
-- [x] Set favicon to use custom icon instead of Vite default
-- [x] Setup router with navigation bar
-- [ ] Create a second page with YouTube randomizer
+- React 18 with TypeScript
+- Vite for build tooling and development server
+- Docker for development environment
+- AWS S3 for static hosting
+- AWS CloudFront for content delivery
+- GitHub Actions for CI/CD
 
-## Getting Started with React + TypeScript + Vite
+## Development
 
-This template uses two official plugins:
+### Prerequisites
+- Docker and Docker Compose
+- Node.js 20+ (for local development without Docker)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md): This plugin uses [Babel](https://babeljs.io/) for Fast Refresh.
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): This plugin uses [SWC](https://swc.rs/) for Fast Refresh.
+### Launch Development Environment
 
-## Expanding the ESLint Configuration
-
-For production applications, consider updating the configuration to enable type-aware lint rules:
-
-1. Configure the top-level `parserOptions` property:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. Clone the repository:
+```bash
+git clone git@github.com:anubiskhan/personal-site-vite.git
+cd personal-site-vite
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Start the Docker development environment:
+```bash
+docker-compose up
+```
+
+The development server will be available at `http://localhost:3000` with hot reload enabled.
+
+## Deployment
+
+### Manual Deployment
+
+1. Configure AWS credentials:
+```bash
+aws configure
+# Set AWS Access Key ID
+# Set AWS Secret Access Key
+# Set default region to us-west-2
+```
+
+2. Build and deploy:
+```bash
+npm run build
+npm run deploy
+npm run invalidate
+```
+
+### Automated Deployment
+
+The repository is configured with GitHub Actions for automated deployment. On merge to the `master` branch:
+1. The application is built
+2. Built assets are synced to S3
+3. CloudFront distribution is invalidated
+
+Required repository secrets:
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+
+## Local Development Without Docker
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start development server:
+```bash
+npm run dev
+```

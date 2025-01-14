@@ -14,10 +14,7 @@ const Home = () => {
                         Over the past six years, I’ve been deeply immersed in Ruby on Rails, PostgreSQL, and AWS, developing robust, scalable applications.
                         </p>
                         <p>
-                        I also bring a strong working knowledge of Vue.js, Python, DevOps, CloudOps, and project management, alongside experience in finance, economics, guitar, and carpentry.
-                        </p>
-                        <p>
-                        While I can work with Wordpress, CraftCMS, CSS, and HTML, these tools are not my favorites, though I handle them proficiently when needed.
+                        I also bring a strong working knowledge of React, Python, DevOps, CloudOps, and project management, alongside experience in finance, economics, guitar, and carpentry.
                         </p>
                         <p>
                         <a href="https://github.com/anubiskhan/personal_site_vite" target="_blank" rel="noopener" className='copyLink'>This site</a> is built using React.js. Hosted in a secure S3 and distributed via Cloudfront.
